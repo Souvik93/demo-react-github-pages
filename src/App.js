@@ -1,9 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import {NavComponent} from './Navbar';
+import { SectionComponent } from './section';
+import { Button, Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <div className="App">
+      <NavComponent></NavComponent>
+      <Container fluid>
+        <SectionComponent></SectionComponent>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -17,7 +25,10 @@ function App() {
         >
           Learn React
         </a>
+        <Button></Button>
+        <Button variant="primary">Primary</Button>{' '}
       </header>
+      </Container>
     </div>
   );
 }
