@@ -1,17 +1,31 @@
 import React from 'react';
-import { NavDropdown, Navbar, Nav } from 'react-bootstrap';
+import { AboutUsCompoenet } from './aboutus';
+import { ContentsComponent } from './contents';
+// import { NavComponent } from './Navbar';
+import { SectionComponent } from './section';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import { NavDropdown, Navbar, Nav, Container } from 'react-bootstrap';
+
+
 
 export class NavComponent extends React.Component {
 
     render() {
         return (
+
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">SM TechWorld</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/" >SM TechWorld</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="#features">About US</Nav.Link>
+                            <Nav.Link as={Link} to="/content">Our Contents</Nav.Link>
+                            <Nav.Link as={Link} to="/about" >About US</Nav.Link>
                             <Nav.Link href="https://www.youtube.com/channel/UCcMKkd33WZYB5BbompylT-g" target="_blank">YouTube</Nav.Link>
                             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -29,9 +43,7 @@ export class NavComponent extends React.Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-            </div>
+        </div>
         )
     }
-
-
 }
